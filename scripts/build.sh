@@ -1,2 +1,2 @@
 #!/bin/bash
-npm install react react-dom --save
+npm install
