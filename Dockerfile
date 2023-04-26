@@ -1,7 +1,5 @@
-FROM node:7.8.0
+FROM node:18.16.0
 WORKDIR /opt
 ADD . /opt
-COPY package*.json ./
 RUN npm install
-COPY . .
 ENTRYPOINT npm run start
