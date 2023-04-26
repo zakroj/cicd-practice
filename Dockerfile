@@ -1,5 +1,7 @@
 FROM node:7.8.0
 WORKDIR /opt
 ADD . /opt
-RUN npm install react react-dom --save
+COPY package*.json ./
+RUN npm install
+COPY . .
 ENTRYPOINT npm run start
