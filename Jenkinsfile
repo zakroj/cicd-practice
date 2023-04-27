@@ -9,21 +9,12 @@ pipeline {
 	        }
       }
     }
-    
-	  stage('list OPT') {
-      steps {
-        script {
-	          docker.image("${registry}:${env.BUILD_ID}").inside {c ->
-	          sh 'ls ./scripts'}
-	        }
-      }
-    }
 	  
     stage('Build The Application') {
       steps {
         script {
 	          docker.image("${registry}:${env.BUILD_ID}").inside {c ->
-	          sh "chmod +x ./scripts/build.sh; ./scripts/build.sh"}
+	          sh './scripts/build.sh'}
 	        }
       }
     }
@@ -32,7 +23,7 @@ pipeline {
       steps {
         script {
 	          docker.image("${registry}:${env.BUILD_ID}").inside {c ->
-	          sh "chmod +x ./scripts/test.sh; ./scripts/build.sh"}
+	          sh './scripts/build.sh'}
 	        }
       }
     }
