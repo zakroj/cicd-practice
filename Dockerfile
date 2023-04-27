@@ -3,5 +3,6 @@ WORKDIR /opt
 ADD . /opt
 COPY /scripts/ ./ 
 COPY /src/ ./
+COPY /public/ ./
 RUN npm install
 ENTRYPOINT npm run start
