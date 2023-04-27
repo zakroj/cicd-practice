@@ -14,7 +14,7 @@ pipeline {
       steps {
         script {
 	          docker.image("${registry}:${env.BUILD_ID}").inside {c ->
-	          sh 'ls /opt/scripts'}
+	          sh 'ls ./scripts'}
 	        }
       }
     }
