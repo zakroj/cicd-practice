@@ -10,6 +10,15 @@ pipeline {
       }
     }
     
+	  stage('list OPT') {
+      steps {
+        script {
+	          docker.image("${registry}:${env.BUILD_ID}").inside {c ->
+	          sh 'ls /opt'}
+	        }
+      }
+    }
+	  
     stage('Build The Application') {
       steps {
         script {
