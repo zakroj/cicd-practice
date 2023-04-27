@@ -1,10 +1,9 @@
 FROM node:17.8.0
 WORKDIR /opt
-ADD scripts /opt
-ADD src /opt
-ADD public /opt
-COPY scripts /opt
-COPY src /opt
-COPY public /opt
+ADD . /opt
+COPY scripts ./opt
+COPY src ./opt
+COPY public ./opt
+COPY package.json ./opt
 RUN npm install
 ENTRYPOINT npm run start
