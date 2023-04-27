@@ -14,7 +14,7 @@ pipeline {
       steps {
         script {
 	          docker.image("${registry}:${env.BUILD_ID}").inside {c ->
-	          sh 'sudo ./scripts/build.sh'}
+	          sh '/scripts/build.sh'}
 	        }
       }
     }
@@ -23,7 +23,7 @@ pipeline {
       steps {
         script {
 	          docker.image("${registry}:${env.BUILD_ID}").inside {c ->
-	          sh 'sudo ./scripts/test.sh'}
+	          sh '/scripts/test.sh'}
 	        }
       }
     }
