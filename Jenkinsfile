@@ -15,11 +15,10 @@ pipeline {
       }
     }
 
-    stage('Test') {
+    stage('Build Docker Image') {
       steps {
         script {
-          docker.image("${registry}:${env.BUILD_ID}").inside {c ->
-          sh '/scripts/build.sh'}
+          docker build -t ci-cd-practice
         }
 
       }
