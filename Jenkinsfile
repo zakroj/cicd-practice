@@ -18,7 +18,8 @@ pipeline {
     stage('Build Docker Image') {
       steps {
         script {
-          docker build -t ci-cd-practice
+          checkout scm
+	          def customImage = docker.build("${registry}:${env.BUILD_ID}")
         }
 
       }
