@@ -8,13 +8,10 @@ pipeline {
       }
     }
 
-    stage('Build The Application') {
+    stage('Test the application') {
       steps {
-        script {
-          docker.image("${registry}:${env.BUILD_ID}").inside {c ->
-          sh 'npm install'}
-        }
-
+        sh '''chmod +x ./scripts/test.sh
+ ./scripts/test.sh'''
       }
     }
 
