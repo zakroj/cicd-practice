@@ -27,5 +27,6 @@ pipeline {
   }
   environment {
     registry = 'zakroj/ci_cd_jenkins'
+    registryCredential = 'dockerhub_id'
   }
 }
