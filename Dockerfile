@@ -1,4 +1,4 @@
-FROM node:12.22.9
+FROM node:17.8.0
 WORKDIR /opt
 ADD . /opt
 COPY package.json ./
